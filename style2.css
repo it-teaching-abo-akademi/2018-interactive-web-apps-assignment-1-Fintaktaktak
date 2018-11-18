@@ -1,0 +1,168 @@
+/* The css file/page layout is set up so  the smallest layout is */
+/* the "default". With wider screens the elements are modified */
+/* as needed. */
+
+/* The full-width layout is an approximation of the assignment sketch layout */
+/* (1200 px and above) */
+/* Below this width the layout diverges from the sketch */
+
+
+/* Width/height includes padding and margins */
+* {
+	box-sizing: border-box;
+}
+
+h1.title	{
+	text-align: center;
+	border: 3px solid black;
+}
+
+
+
+
+/* This contains the whole page excluding the title */
+div.main-area	{
+	display: flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+/* The upper right menu on the sketch */
+/* Not shown at very low screen widths in order to reduce clutter */
+div.top-menu	{
+	display: none;
+	justify-content: end;
+}
+div.top-menu a	{
+	margin: 0.25em 1em 0.25em 1em;
+}
+/* Menu shown above main text in upper right side, shares row with "hem" menu */
+@media only screen and ((min-width: 601px) and (max-width: 992px))	{
+	div.top-menu	{
+		/* During the 601-992px intervall the "Hem"/home menu is to */
+		/* the left of the top menu. In order to achieve this the */
+		/* sorting order has to be changed for the flex block */
+		/* (hem-menu = order: 1) allows the hem-menu to be put infront */
+		/* of the top menu */
+		order:2;
+		display:flex;
+		width:40%;
+	}
+}
+/* Menu above main text at the upper right side */
+@media only screen and (min-width: 993px)	{
+	div.top-menu	{
+		order:1;
+		display:flex;
+		width:100%;
+		margin: 0 0 20px 0;
+	}
+}
+
+
+
+
+/* This is the "Hem"/home menu that's at the left side in the sketch */
+div.hem-menu	{
+	display: flex;
+	font-size: 20px;
+	justify-content: center;
+}
+div.hem-menu a	{
+	margin: 0.25em 1em 0.25em 1em;
+}
+/* At extremly low screen widths the menu is above the main text */
+/* and the font size scales with the screen width */
+@media only screen and (max-width: 400px)	{
+	div.hem-menu	{
+		font-size: 5vw;
+		width: 100%;
+	}
+}
+/* At very low screen widths the menu is centered above the main text */
+@media only screen and ((min-width: 401px) and (max-width: 600px))	{
+	div.hem-menu	{
+		width: 100%;
+	}
+}
+/* At low screen widths the menu is top-left above the main text */
+@media only screen and ((min-width: 601px) and (max-width: 992px))	{
+	div.hem-menu	{
+		order: 1;
+		justify-content: start;
+		align-items: flex-start;
+		width: 60%;
+	}
+	div.hem-menu a	{
+		margin: 0.25em 0.5em 0.25em 1em;
+	}
+
+}
+/* At ~tablet screen widths the menu is moved to the left of the main text*/
+@media only screen and (min-width: 993px)	{
+	div.hem-menu	{
+		order: 1;
+		justify-content: start;
+		flex-direction:column;
+		align-items: center;
+		width: 10%;
+	}
+}
+/* At high screen widths a black border is added around the menu */
+@media only screen and (min-width: 1200px)	{
+	div.hem-menu	{
+		order: 1;
+		align-items: center;
+		width: 10%;
+		margin: 0 2.5% 0 2.5%;
+		border: 3px solid black;
+	}
+	div.hem-menu a	{
+		font-size: 22px;
+	}
+}
+
+
+
+
+/* The main text, order set for clarity */
+div.main-text	{
+	order: 3;
+}
+/* At decent screen width the "hem" menu is moved to the left of the main */
+/* text, we also don't go all the way to the right */
+@media only screen and (min-width: 993px)	{
+	div.main-text	{
+		width: 85%;
+	}
+}
+/* At high screen widths we'll waste more screen estate on the left menu */
+@media only screen and (min-width: 1200px)	{
+	div.main-text	{
+		width: 80%;
+	}
+}
+
+
+
+
+/* The "panorama" isn't shown for very small screens. */
+picture.fake-panorama	{
+	display: none;
+	margin: 10px auto 0 auto;
+}
+/* Show small panorama, treat it as a stand-alone block */
+@media only screen and ((min-width: 540px) and (max-width: 992px))	{
+	picture.fake-panorama	{
+		display: block;
+		width: 520px;
+	}
+}
+/* Show large panorama, treat it as a stand-alone block */
+@media only screen and (min-width: 993px)	{
+	picture.fake-panorama	{
+		display: block;
+		width: 844px;
+	}
+}

@@ -1,0 +1,69 @@
+<html>
+<head>
+<!行 link to css file used for the html page 行>
+<link rel="stylesheet" type="text/css" href="style1.css">
+
+<!行 Functions to allow moving images -->
+<!-- Works by a ) overriding default browser behaviour -->
+<!-- b) storing the "Id" of the element being dragged and then telling
+<!-- the browser to move that Id to a new location -->
+<!-- Requires that the dragged tag (<img> in this case) has a Id set -->
+<!-- and that both the dragged tag and destionation elements have been -->
+<!-- setup to call the proper functions -->
+<script>
+function allowDrop(ev)	{
+	ev.preventDefault();
+}
+
+function drag(ev)	{
+	ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev)	{
+	ev.preventDefault();
+	var data = ev.dataTransfer.getData("text");
+	ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head> 
+<body>
+
+<!-- The target layout was fixed so we don't want any "floating" containers -->
+<!行 Use an overarching div to create the side borders as seen on the example layout 行>
+<div class="overarching">
+	<!行 Target layout had three "rows" of squares, use three divs to achieve this 行>
+	<div class="row">
+		<!行 Create layout squares, inline flex type for the ones 行>
+		<!行 containing text so the text can easily be centered 行>
+		<!行 vertically as well as horizontally 行>
+		<span class="text-a text-block"><p>Text A</p></span>
+		<span class="text-b text-block"><p>Text B</p></span>
+		<span class="text-c text-block"><p>Text C</p></span>
+
+		<!行 Normal inline-block for the photo but with an animated 行>
+		<!行 class for the image 行>
+		<span class="photo-2 photo-block"><img class="photo-2" src="chii100.png" draggable="false" width="150" height="150"></span>
+	</div>
+	<br><br> <!-- Row separation, could be done with margins as an alternative -->
+	<div class="row">
+		<!行 Same as previous, flexblock for text rectangle, inline 行>
+		<!行 block for the photo 行>
+		<span class="photo-1 photo-block">
+			<!行 The image is "connected" with the javascript functions 行>
+			<!行 to allow dragging the image as part of the interaction 行>
+			<!行 with the webpage 行>
+			<img id="drag1" src="chii100.png" draggable="true" ondragstart="drag(event)" width="150" height="150">
+		</span>
+		<span class="text-d text-block"><p>Text D</p></span>
+	</div>
+	<br> <!-- Row separation, could be done with margins as an alternative -->
+	<div class="row">
+		<!行 Two normal inline-blocks for the drag&drop photo destinations 行>
+		<!行 "connected" to functions to allow both dragging -->
+		<!行 and dropping the interactable image 行>
+		<span id="drag-drop-1" class="photo-drag-1 photo-block" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+		<span id="drag-drop-2" class="photo-drag-2 photo-block" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+	</div>
+</div>
+</body>
+</html>
