@@ -43,7 +43,7 @@ div.text-block	{
 }	
 
 /* Have specific details for each block in the layout, making sure we get the */
-/* distances to be the same as in the assignment layout.
+/* distances to be the same as in the assignment layout. */
 div.text-a	{
 	align-items: flex-start;
 	justify-content: center;
