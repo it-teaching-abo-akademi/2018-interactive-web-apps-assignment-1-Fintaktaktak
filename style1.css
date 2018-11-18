@@ -1,3 +1,8 @@
+/* Width/height includes padding and margins */
+* {
+	box-sizing: border-box;
+}
+
 /* Have the p tag default to inheriting the background-color from its parent */
 p	{
 	margin: 2px;
@@ -23,6 +28,7 @@ div.photo-block	{
 	height: 150px;
 	border: 1px solid black;
 	vertical-align: top;
+	margin: 0;
 }
 
 /* Define specific values for each block to get the right background color */
@@ -33,8 +39,11 @@ div.text-block	{
 	height: 150px;
 	border: 1px solid black;
 	vertical-align: top;
+	margin: 0;
 }	
 
+/* Have specific details for each block in the layout, making sure we get the */
+/* distances to be the same as in the assignment layout.
 div.text-a	{
 	align-items: flex-start;
 	justify-content: center;
@@ -95,7 +104,7 @@ div.photo-drag-2	{
 	border: 2px solid black;
 }
 
-/* specially added to animate the upper right image */
+/* Used to animate the upper right image */
 img.photo-2	{
 	transform: scaleX(-1); /* flip image */
 	position: relative;
@@ -103,7 +112,7 @@ img.photo-2	{
 	animation-iteration-count: infinite;
 	animation-duration: 20s;
 }
-
+/* Keyframes for animation */
 @keyframes photo-move	{
 	0% {transform: scaleX(-1);}
 	17% {transform: scaleX(-1);}
