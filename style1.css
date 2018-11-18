@@ -18,7 +18,7 @@ div.row	{
 }
 
 /* Define common values for the blocks */
-span.photo-block	{
+div.photo-block	{
 	display: inline-block;
 	width: 150px;
 	height: 150px;
@@ -28,7 +28,7 @@ span.photo-block	{
 
 /* Define specific values for each block to get the right background color */
 /* text alignment, font size etc. */ 
-span.text-block	{
+div.text-block	{
 	display: inline-flex;
 	width: 150px;
 	height: 150px;
@@ -36,27 +36,27 @@ span.text-block	{
 	vertical-align: top;
 }	
 
-span.text-a	{
+div.text-a	{
 	align-items: flex-start;
 	justify-content: center;
 	background-color: blue;
 }
-span.text-a p	{
+div.text-a p	{
 	color: white;
 }
 
-span.text-b	{
+div.text-b	{
 	align-items: center;
 	margin-left: 250px;
 	background-color: yellow;
 }
-span.text-b p	{
+div.text-b p	{
 	font-size: 40px;
 	font-weight: bold;
 	color: black;
 }
 
-span.text-c	{
+div.text-c	{
 	align-items: flex-end;
 	justify-content: center;
 	font-size: 20px;
@@ -64,34 +64,34 @@ span.text-c	{
 	margin-left:150px;
 	background-color: green;
 }
-span.text-c p	{
+div.text-c p	{
 	font-size: 20px;
 	color: white;
 }
 
-span.text-d	{
+div.text-d	{
 	margin-left: 75px;
 	width: 700px;
 	border: 2px solid red;
 	background-color: gray;
 }
-span.text-d p	{
+div.text-d p	{
 	color: red;
 }
 
-span.photo-1	{
+div.photo-1	{
 }
 
-span.photo-2	{
+div.photo-2	{
 	margin-left: 220px;
 }
 
-span.photo-drag-1	{
+div.photo-drag-1	{
 	margin-left: 75px;
 	border: 2px solid lightgreen;
 }
 
-span.photo-drag-2	{
+div.photo-drag-2	{
 	margin-left: 700px;
 	border: 2px solid black;
 }

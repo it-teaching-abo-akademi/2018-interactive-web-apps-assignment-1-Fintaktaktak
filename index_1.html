@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <!-- link to css file used for the html page -->
@@ -5,7 +6,7 @@
 
 <!-- Functions to allow moving images -->
 <!-- Works by a ) overriding default browser behaviour -->
-<!-- b) storing the "Id" of the element being dragged and then telling -->
+<!-- b) storing the "Id" of the element being dragged and then telling
 <!-- the browser to move that Id to a new location -->
 <!-- Requires that the dragged tag (<img> in this case) has a Id set -->
 <!-- and that both the dragged tag and destionation elements have been -->
@@ -25,6 +26,9 @@ function drop(ev)	{
 	ev.target.appendChild(document.getElementById(data));
 }
 </script>
+<title>
+Exercise 1
+</title>
 </head> 
 <body>
 
@@ -36,33 +40,33 @@ function drop(ev)	{
 		<!-- Create layout squares, inline flex type for the ones -->
 		<!-- containing text so the text can easily be centered -->
 		<!-- vertically as well as horizontally -->
-		<span class="text-a text-block"><p>Text A</p></span>
-		<span class="text-b text-block"><p>Text B</p></span>
-		<span class="text-c text-block"><p>Text C</p></span>
+		<div class="text-a text-block"><p>Text A</p></div>
+		<div class="text-b text-block"><p>Text B</p></div>
+		<div class="text-c text-block"><p>Text C</p></div>
 
 		<!-- Normal inline-block for the photo but with an animated -->
 		<!-- class for the image -->
-		<span class="photo-2 photo-block"><img class="photo-2" src="chii100.png" draggable="false" width="150" height="150"></span>
+		<div class="photo-2 photo-block"><img class="photo-2" src="chii100.png" draggable="false" width="150" height="150" alt="Photo 2"></div>
 	</div>
 	<br><br> <!-- Row separation, could be done with margins as an alternative -->
 	<div class="row">
 		<!-- Same as previous, flexblock for text rectangle, inline -->
 		<!-- block for the photo -->
-		<span class="photo-1 photo-block">
+		<div class="photo-1 photo-block">
 			<!-- The image is "connected" with the javascript functions -->
 			<!-- to allow dragging the image as part of the interaction -->
 			<!-- with the webpage -->
-			<img id="drag1" src="chii100.png" draggable="true" ondragstart="drag(event)" width="150" height="150">
-		</span>
-		<span class="text-d text-block"><p>Text D</p></span>
+			<img id="drag1" src="chii100.png" draggable="true" ondragstart="drag(event)" width="150" height="150" alt="Photo 1">
+		</div>
+		<div class="text-d text-block"><p>Text D</p></div>
 	</div>
 	<br> <!-- Row separation, could be done with margins as an alternative -->
 	<div class="row">
 		<!-- Two normal inline-blocks for the drag&drop photo destinations -->
 		<!-- "connected" to functions to allow both dragging -->
 		<!-- and dropping the interactable image -->
-		<span id="drag-drop-1" class="photo-drag-1 photo-block" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
-		<span id="drag-drop-2" class="photo-drag-2 photo-block" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+		<div id="drag-drop-1" class="photo-drag-1 photo-block" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div id="drag-drop-2" class="photo-drag-2 photo-block" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 	</div>
 </div>
 </body>
