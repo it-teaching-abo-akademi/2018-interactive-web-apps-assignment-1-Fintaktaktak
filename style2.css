@@ -32,13 +32,13 @@ div.main-area	{
 /* Not shown at very low screen widths in order to reduce clutter */
 div.top-menu	{
 	display: none;
-	justify-content: end;
+	justify-content: flex-end;
 }
 div.top-menu a	{
 	margin: 0.25em 1em 0.25em 1em;
 }
 /* Menu shown above main text in upper right side, shares row with "hem" menu */
-@media only screen and ((min-width: 601px) and (max-width: 992px))	{
+@media only screen and (min-width: 601px)	{
 	div.top-menu	{
 		/* During the 601-992px intervall the "Hem"/home menu is to */
 		/* the left of the top menu. In order to achieve this the */
@@ -50,6 +50,7 @@ div.top-menu a	{
 		width:40%;
 	}
 }
+
 /* Menu above main text at the upper right side */
 @media only screen and (min-width: 993px)	{
 	div.top-menu	{
@@ -81,13 +82,13 @@ div.hem-menu a	{
 	}
 }
 /* At very low screen widths the menu is centered above the main text */
-@media only screen and ((min-width: 401px) and (max-width: 600px))	{
+@media only screen and (min-width: 401px)	{
 	div.hem-menu	{
 		width: 100%;
 	}
 }
 /* At low screen widths the menu is top-left above the main text */
-@media only screen and ((min-width: 601px) and (max-width: 992px))	{
+@media only screen and (min-width: 601px)	{
 	div.hem-menu	{
 		order: 1;
 		justify-content: start;
@@ -107,6 +108,9 @@ div.hem-menu a	{
 		flex-direction:column;
 		align-items: center;
 		width: 10%;
+	}
+	div.hem-menu a	{
+		margin: 0.25em 1em 0.25em 1em;
 	}
 }
 /* At high screen widths a black border is added around the menu */
@@ -153,7 +157,7 @@ picture.fake-panorama	{
 	margin: 10px auto 0 auto;
 }
 /* Show small panorama, treat it as a stand-alone block */
-@media only screen and ((min-width: 540px) and (max-width: 992px))	{
+@media only screen and (min-width: 540px)	{
 	picture.fake-panorama	{
 		display: block;
 		width: 520px;

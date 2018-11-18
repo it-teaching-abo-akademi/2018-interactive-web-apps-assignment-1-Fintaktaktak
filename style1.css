@@ -7,9 +7,8 @@ p	{
 div.overarching	{
 	margin: 5px;
 	padding: 20px 5px 20px 5px;
-	width = 1270px;
-	height = 480px;
-	border: 2px solid #aaaaaa;
+	width: 1270px;
+	height: 480px;
 }
 
 div.row	{
